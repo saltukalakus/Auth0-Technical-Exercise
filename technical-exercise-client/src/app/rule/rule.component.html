@@ -1,0 +1,49 @@
+<div class="alert alert-primary" role="alert">
+  Click on the load button to find the corresponding Rules
+</div>
+
+<div *ngIf="rules?.length===0">
+  <mat-card>
+    <div class="alert alert-primary" role="alert">
+      No Rules Found
+    </div>
+  </mat-card>
+</div>
+<app-loading-spinner-rect *ngIf="loader"></app-loading-spinner-rect>
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let rule of rules">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Rule Name : {{rule?.name}}
+      </mat-panel-title>
+      <mat-panel-description>
+        Rule Id :{{rule?.id}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-card>
+      <mat-card-content>
+        <h3>Script:</h3>
+        <pre>
+                  <code>
+                    {{rule?.script}}
+                  </code>
+                </pre>
+      </mat-card-content>
+    </mat-card>
+  </mat-expansion-panel>
+</mat-accordion>
+<!-- <div *ngFor="let rule of rules | async">
+  <mat-card>
+    <mat-card-title>Rule Name : {{rule?.name}}</mat-card-title>
+    <mat-card-subtitle> Rule Id :{{rule?.id}}</mat-card-subtitle>
+    <mat-card-content>
+      <h3>Script:</h3>
+      <pre>
+          <code>
+            {{rule?.script}}
+          </code>
+        </pre>
+    </mat-card-content>
+  </mat-card>
+  <br>
+</div> -->

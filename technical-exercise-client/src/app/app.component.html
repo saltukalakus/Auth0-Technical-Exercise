@@ -1,0 +1,14 @@
+<div class="row">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span class="spacer"></span>
+      <button mat-button routerLink="/">Home</button>
+      <button mat-button routerLink="/view">Clients & Rules</button>
+      <button mat-button *ngIf="!auth.isAuthenticated()" (click)="login()">Login</button>
+      <button mat-button *ngIf="auth.isAuthenticated()" (click)="logout()">Logout</button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>
+<div class='container-fluid'>
+  <router-outlet></router-outlet>
+</div>

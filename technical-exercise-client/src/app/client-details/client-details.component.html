@@ -1,0 +1,40 @@
+<!-- <mat-dialog-content> -->
+<mat-card>
+  <mat-card-content>
+    <p>client_id : {{data?.client_id}}</p>
+    <p>name : {{data?.name}}</p>
+    <p>addons : {{data?.addons}}</p>
+    <p>allowed_clients : {{data?.allowed_clients}}</p>
+    <p> allowed_logout_urls : {{data?.allowed_logout_urls}}</p>
+    <p>allowed_origins : {{data?.allowed_origins}}</p>
+    <p>app_type: {{data?.app_type}}</p>
+    <p>callbacks: {{data?.callbacks}}</p>
+    <p>client_aliases: {{data?.client_aliases}}</p>
+    <p>client_metadata: {{data?.client_metadata}}</p>
+    <p>client_secret: {{data?.client_secret}}</p>
+    <p>custom_login_page: {{data?.custom_login_page}}</p>
+    <p>custom_login_page_on: {{data?.custom_login_page_on}}</p>
+    <p> custom_login_page_preview: {{data?.custom_login_page_preview}}</p>
+    <p> description: {{data?. description}}</p>
+    <p> encryption_key: {{data?.encryption_key}}</p>
+    <p>form_template: {{data?.form_template}}</p>
+    <p>is_first_party: {{data?.is_first_party}}</p>
+    <p>logo_uri: {{data?.logo_uri}}</p>
+    <p>mobile: {{data?.mobile}}</p>
+    <p>oidc_conformant: {{data?.oidc_conformant}}</p>
+    <p>sso: {{data?.sso}}</p>
+    <p>token_endpoint_auth_method: {{data?.token_endpoint_auth_method}}</p>
+    <p>web_origins: {{data?.web_origins}}</p>
+    <div *ngFor="let jwt of jwt_configuration">
+      <p>alg: {{jwt?.alg}}</p>
+      <p>lifetime_in_seconds: {{jwt?.lifetime_in_seconds}}</p>
+      <p>scopes: {{jwt?.scopes}}</p>
+      <p>secret_encoded: {{jwt?.secret_encoded}}</p>
+    </div>
+    <div *ngFor="let grant of grant_types; let i=index;">
+      <p>{{grant[i]}}</p>
+    </div>
+  </mat-card-content>
+</mat-card>
+<button mat-raised-button color="primary" (click)="close()">Close</button>
+<!-- </mat-dialog-content> -->

@@ -10,7 +10,7 @@ The client application uses auth0 for authenticaiton and authorization. It follo
 
 
 # Auth0.Exercise.Server
-A simple server app which communicate to Auth0 Management Api. This is a ASPNET CORE 2.1 project. It can be considered as a wrapper on top of Auth0 management API. At this moment, it only retrives auth0 client and rules and exposes the resourcess as RestFul API for client application to consume the resources. 
+A simple server app which communicate to Auth0 Management Api. This is an ASPNET CORE 2.1 project. It can be considered as a wrapper on top of Auth0 management API. At this moment, it only retrives auth0 client and rules and exposes the resourcess as RestFul API for client application to consume the resources. 
 The main purpose for this layer to  to dynamically generate, at any time, a list of the applications in our account and the rules which apply to each application. It throws a chalange to use. Because, There is no direct communication between auth0 client and rules. However, to apply a rules to a application, rules contains client identifier property (clientId, name) in the script. Thus, it is possible to figure out which rules applies to which application just by simply running a search in the script property with clientId. 
 
 To communicate with Auth0 Management Api, It reqires token and domain property. This is a server to server communication. The token is generated using using auth0 dashboard. It is only valid for 24 hours.

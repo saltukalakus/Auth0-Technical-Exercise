@@ -56,7 +56,7 @@ namespace Auth0.Exercise
             {
                 c.SwaggerDoc("v1", new Info
                 {
-                    Title = "Digital Medical Passport",
+                    Title = "Auth0",
                     Version = "v1",
                     Description = "Auth0 Tecnical Exercise  API endpoint Documentation",
                     Contact = new Contact { Name = "Tanver Hasan", Email = "t.h.noman@outlook.com" }

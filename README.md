@@ -12,6 +12,8 @@ Note: audience parameter must be defined to authorize API. Otherwise, it will pe
 Angular has the concept of token interceptor for an outgoing message. In this application, an interceptor is created to dynamically add access token for each outgoing request.
 
 # Auth0.Exercise.Server
+It runs on http://localhost:50082.
+
 This is an ASPNET CORE 2.1 project.A simple server app which communicates with Auth0 Management API. Management API is meant to be used by back-end servers or trusted parties performing administrative tasks. It can be considered as a wrapper on top of Auth0 management API. At this moment, it only retrieves auth0 clients(Applications) and rules. Then, it exposes the resources as RESTFUL API for the client application to consume the resources. 
 The main purpose of this layer to dynamically generate, at any time, a list of the applications in our account and the rules which apply to each application. It throws a challenge to use. Because There is no direct communication between auth0 client and rules. However, to apply rules to an application, rules contains client identifier property (clientId, name) in the script. Thus, it is possible to figure out which rules apply to which application just by simply running a search in the script property with clientId. 
 
